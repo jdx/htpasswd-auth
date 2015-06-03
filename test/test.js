@@ -11,8 +11,29 @@ describe('htpasswd', function () {
     });
   });
 
-  it('returns true with correct password', function () {
+  it('supports md5', function () {
     return htpasswd.authenticate('dickeyxxx', 'pass', './test/fixtures/md5')
+    .then(function (auth) {
+      return expect(auth).to.be.true;
+    });
+  });
+
+  it('supports bcrypt', function () {
+    return htpasswd.authenticate('dickeyxxx', 'pass', './test/fixtures/bcrypt')
+    .then(function (auth) {
+      return expect(auth).to.be.true;
+    });
+  });
+
+  it('supports sha1', function () {
+    return htpasswd.authenticate('dickeyxxx', 'pass', './test/fixtures/sha1')
+    .then(function (auth) {
+      return expect(auth).to.be.true;
+    });
+  });
+
+  it('supports crypt', function () {
+    return htpasswd.authenticate('dickeyxxx', 'pass', './test/fixtures/crypt')
     .then(function (auth) {
       return expect(auth).to.be.true;
     });
