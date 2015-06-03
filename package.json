@@ -1,0 +1,22 @@
+{
+  "name": "htpasswd-auth",
+  "version": "1.0.0",
+  "description": "authenticate with htpasswd files",
+  "main": "index.js",
+  "scripts": {
+    "test": "jshint . && mocha"
+  },
+  "keywords": [
+    "htpasswd"
+  ],
+  "author": "Jeff Dickey (@dickeyxxx)",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "jshint": "*"
+  },
+  "dependencies": {
+    "apache-md5": "^1.0.0"
+  }
+}
