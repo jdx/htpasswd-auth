@@ -9,6 +9,10 @@
   "keywords": [
     "htpasswd"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dickeyxxx/htpasswd-auth"
+  },
   "author": "Jeff Dickey (@dickeyxxx)",
   "license": "ISC",
   "devDependencies": {
