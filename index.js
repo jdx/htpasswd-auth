@@ -1,6 +1,5 @@
 'use strict';
 
-var fs     = require('fs');
 var md5    = require('apache-md5');
 var crypt  = require('apache-crypt');
 var bcrypt = require('bcrypt');
@@ -33,18 +32,15 @@ function checkPassword (digest, password) {
 }
 
 function authenticate (username, password, htpasswd) {
-  return new Promise(function (fulfill, reject) {
-    fs.readFile(htpasswd, 'utf8', function (err, data) {
-      if (err) { return reject(err); }
-      var lines = data.split('\n');
-      lines.forEach(function (line) {
-        line = line.split(':');
-        if (line[0] === username) {
-          fulfill(checkPassword(line[1], password));
-        }
-      });
-      fulfill(false);
+  return new Promise(function (fulfill) {
+    var lines = htpasswd.split('\n');
+    lines.forEach(function (line) {
+      line = line.split(':');
+      if (line[0] === username) {
+        fulfill(checkPassword(line[1], password));
+      }
     });
+    fulfill(false);
   });
 }
 

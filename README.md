@@ -12,7 +12,9 @@ npm install --save htpasswd-auth
 
 ```js
 var htpasswd = require('htpasswd-auth');
-htpasswd.authenticate('dickeyxxx', 'pass', './path-to-htpasswd')
+var file     = fs.readFileSync('./path-to-htpasswd');
+
+htpasswd.authenticate('dickeyxxx', 'pass', file)
 .then(function (auth) {
   // auth is true if the password is valid
 });
