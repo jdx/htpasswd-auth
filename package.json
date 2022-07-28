@@ -1,6 +1,6 @@
 {
   "name": "htpasswd-auth",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "authenticate with htpasswd files",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,8 @@
     "mocha": "*"
   },
   "dependencies": {
-    "apache-crypt": "^1.0.8",
-    "apache-md5": "^1.0.0",
-    "bcrypt": "^2.0.1"
+    "apache-crypt": "^1.2.5",
+    "apache-md5": "^1.1.7",
+    "bcrypt": "^5.0.1"
   }
 }
